@@ -1,0 +1,132 @@
+import java.util.Scanner;
+public class VocabListDriver {
+    Scanner input=new Scanner(System.in);
+    public static void main (String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("Do you want to play the game? Choose yes/no");
+        String ans = input.next();
+        if(ans.equals("no")){
+        //default constructor
+        VocabList v1 = new VocabList();
+        System.out.println(v1);
+        
+        String[] word = {"spaghetti", "penne", "fettucine"};
+        String[] definition = {"long thin goodle noodle time", "hallow good noodle time", "long flat noodle time"};
+        VocabList v2 = new VocabList(word, definition); //should also show that toString method works as desired
+        System.out.println(v2);
+        
+        //copy constructor
+        VocabList v3 = new VocabList(v2);
+        System.out.println(v3);
+        
+        //accessor methods
+        System.out.println(v2.size()); 
+        System.out.println(v2.contains("spaghetti")); 
+        System.out.println(v2.contains("linguine"));
+        System.out.println(v2.getDefinition("spaghetti"));
+        System.out.println(v2.getWord("long thin goodle noodle time"));
+        System.out.println(v2.getDefinition("linguine"));
+        System.out.println(v2.getWord("long thin HOLLOW noodle time"));
+        System.out.println(v2.getRandomWord());
+        System.out.println(v2.getRandomDefinition());
+        
+        //mutator methods
+        v2.add("macaroni", "bendy hallow good noodle time");
+        System.out.println(v2);
+        v2.remove("penne");
+        System.out.println(v2);
+        v2.remove("bucatini");
+    } else {
+        System.out.println("GAME: type the word that matches the definition");
+        String[] word = {"spaghetti", "penne", "fettucine"};
+        String[] definition = {"long thin goodle noodle time", "hallow good noodle time", "long flat noodle time"};
+        VocabList v2 = new VocabList(word, definition);
+        int score = 0;
+        String a1 = v2.getRandomDefinition();
+        System.out.println("#1."+ a1);
+        String ans1 = input.next();
+        if(ans1.equals(v2.getWord(a1))) {
+            System.out.println("RIGHT");
+            score++;
+        } else {
+            System.out.println("WRONG");
+        }
+        String a2 = v2.getRandomDefinition();
+        System.out.println("#2." + a2);
+        String ans2 = input.next();
+        if(ans2.equals(v2.getWord(a2))) {
+            System.out.println("RIGHT");
+            score ++;
+        } else {
+           System.out.println("WRONG"); 
+        }
+        String a3 = v2.getRandomDefinition();
+        System.out.println("#3." + a3);
+        String ans3 = input.next();
+        if(ans3.equals(v2.getWord(a3))) {
+            System.out.println("RIGHT");
+            score ++;
+        } else {
+           System.out.println("WRONG"); 
+        }
+        String a4 = v2.getRandomDefinition();
+        System.out.println("#4." + a4);
+        String ans4 = input.next();
+        if(ans4.equals(v2.getWord(a4))) {
+            System.out.println("RIGHT");
+            score ++;
+        } else {
+           System.out.println("WRONG"); 
+        }
+        String a5 = v2.getRandomDefinition();
+        System.out.println("#5." + a5);
+        String ans5 = input.next();
+        if(ans5.equals(v2.getWord(a5))) {
+            System.out.println("RIGHT");
+            score ++;
+        } else {
+           System.out.println("WRONG"); 
+        }
+        String a6 = v2.getRandomDefinition();
+        System.out.println("#6." + a6);
+        String ans6 = input.next();
+        if(ans6.equals(v2.getWord(a6))) {
+            System.out.println("RIGHT");
+            score ++;
+        } else {
+           System.out.println("WRONG"); 
+        }
+        String a7= v2.getRandomDefinition();
+        System.out.println("#7." + a7);
+        String ans7 = input.next();
+        if(ans7.equals(v2.getWord(a7))) {
+            System.out.println("RIGHT");
+            score ++;
+        } else {
+           System.out.println("WRONG"); 
+        }
+        String a8 = v2.getRandomDefinition();
+        System.out.println("#8." + a8);
+        String ans8 = input.next();
+        if(ans8.equals(v2.getWord(a8))) {
+            System.out.println("RIGHT");
+            score ++;
+        } else {
+           System.out.println("WRONG"); 
+        }
+        String a9 = v2.getRandomDefinition();
+        System.out.println("#9." + a9);
+        String ans9 = input.next();
+        if(ans9.equals(v2.getWord(a9))) {
+            System.out.println("RIGHT");
+            score ++;
+        } else {
+           System.out.println("WRONG"); 
+        }
+        System.out.println("GAME OVER");
+        System.out.println("SCORE: " + score);
+    }
+        
+    }
+    
+}
